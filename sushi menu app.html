@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תפריט סושי</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #F0F8FF;
+            color: #004AAD;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+            direction: ltr; /* Ensures typing behavior is LTR for numbers */
+            text-align: center; /* Centers the number within the input box */
+        }
+    </style>
+</head>
+<body class="bg-[#F0F8FF] text-[#004AAD] flex flex-col min-h-screen">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl flex-grow">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#004AAD]">🍣 תפריט סושי 🍣</h1>
+            <p class="text-lg md:text-xl mt-4 text-[#0079FF]">בחרו את המנות האהובות עליכם והמחיר יחושב אוטומטית!</p>
+        </header>
+
+        <main class="space-y-8">
+            <!-- Sushi Rolls Section -->
+            <section class="card">
+                <h2 class="text-3xl font-bold text-center mb-6">רולים (18 ש"ח ליחידה)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Example Roll 1 -->
+                    <div class="flex items-center justify-between p-4 border border-[#B4D4FF] rounded-lg">
+                        <span class="text-lg font-semibold">רול טונה אבוקדו</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="roll" data-action="plus">+</button>
+                            <input type="number" id="roll1_qty" value="0" min="0" class="w-16 border border-[#B4D4FF] rounded-md py-1" data-price="18" data-item-type="roll">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="roll" data-action="minus">-</button>
+                        </div>
+                    </div>
+                    <!-- Example Roll 2 -->
+                    <div class="flex items-center justify-between p-4 border border-[#B4D4FF] rounded-lg">
+                        <span class="text-lg font-semibold">רול סלמון טרי</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="roll" data-action="plus">+</button>
+                            <input type="number" id="roll2_qty" value="0" min="0" class="w-16 border border-[#B4D4FF] rounded-md py-1" data-price="18" data-item-type="roll">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="roll" data-action="minus">-</button>
+                        </div>
+                    </div>
+                    <!-- Example Roll 3 -->
+                    <div class="flex items-center justify-between p-4 border border-[#B4D4FF] rounded-lg">
+                        <span class="text-lg font-semibold">רול בטטה טמפורה</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="roll" data-action="plus">+</button>
+                            <input type="number" id="roll3_qty" value="0" min="0" class="w-16 border border-[#B4D4FF] rounded-md py-1" data-price="18" data-item-type="roll">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="roll" data-action="minus">-</button>
+                        </div>
+                    </div>
+                    <!-- Example Roll 4 -->
+                    <div class="flex items-center justify-between p-4 border border-[#B4D4FF] rounded-lg">
+                        <span class="text-lg font-semibold">רול צמחוני</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="roll" data-action="plus">+</button>
+                            <input type="number" id="roll4_qty" value="0" min="0" class="w-16 border border-[#B4D4FF] rounded-md py-1" data-price="18" data-item-type="roll">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="roll" data-action="minus">-</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pokey Balls Section -->
+            <section class="card">
+                <h2 class="text-3xl font-bold text-center mb-6">פוקי בול (40 ש"ח ליחידה)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Example Pokey Ball 1 -->
+                    <div class="flex items-center justify-between p-4 border border-[#B4D4FF] rounded-lg">
+                        <span class="text-lg font-semibold">פוקי בול סלמון</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="pokey" data-action="plus">+</button>
+                            <input type="number" id="pokey1_qty" value="0" min="0" class="w-16 border border-[#B4D4FF] rounded-md py-1" data-price="40" data-item-type="pokey">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="pokey" data-action="minus">-</button>
+                        </div>
+                    </div>
+                    <!-- Example Pokey Ball 2 -->
+                    <div class="flex items-center justify-between p-4 border border-[#B4D4FF] rounded-lg">
+                        <span class="text-lg font-semibold">פוקי בול טופו</span>
+                        <div class="flex items-center space-x-2">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="pokey" data-action="plus">+</button>
+                            <input type="number" id="pokey2_qty" value="0" min="0" class="w-16 border border-[#B4D4FF] rounded-md py-1" data-price="40" data-item-type="pokey">
+                            <button class="quantity-btn bg-[#0079FF] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#005BC5] transition" data-item="pokey" data-action="minus">-</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Total Price Section -->
+            <section class="card bg-[#E0F2FE] p-6 md:p-8 text-center border-2 border-[#0079FF]">
+                <h2 class="text-3xl font-bold mb-4">סה"כ לתשלום:</h2>
+                <p id="totalPrice" class="text-5xl font-extrabold text-[#004AAD]">0 ש"ח</p>
+            </section>
+        </main>
+
+    </div>
+
+    <footer class="text-center mt-12 pt-8 pb-4 border-t-2 border-[#B4D4FF]">
+        <p class="text-lg font-bold">תהנו מהסושי שלכם!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quantityInputs = document.querySelectorAll('input[type="number"]');
+            const quantityButtons = document.querySelectorAll('.quantity-btn');
+            const totalPriceDisplay = document.getElementById('totalPrice');
+
+            const calculateTotalPrice = () => {
+                let total = 0;
+                quantityInputs.forEach(input => {
+                    const quantity = parseInt(input.value);
+                    const price = parseFloat(input.dataset.price);
+                    if (!isNaN(quantity) && !isNaN(price)) {
+                        total += quantity * price;
+                    }
+                });
+                totalPriceDisplay.textContent = `${total} ש"ח`;
+            };
+
+            quantityButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const input = event.target.closest('div').querySelector('input[type="number"]');
+                    let currentValue = parseInt(input.value);
+                    const action = event.target.dataset.action;
+
+                    if (action === 'plus') {
+                        input.value = currentValue + 1;
+                    } else if (action === 'minus') {
+                        if (currentValue > 0) {
+                            input.value = currentValue - 1;
+                        }
+                    }
+                    calculateTotalPrice();
+                });
+            });
+
+            quantityInputs.forEach(input => {
+                input.addEventListener('change', calculateTotalPrice);
+                input.addEventListener('input', calculateTotalPrice);
+            });
+
+            calculateTotalPrice();
+        });
+    </script>
+</body>
+</html>
